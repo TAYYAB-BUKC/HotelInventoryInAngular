@@ -1,2 +1,3 @@
 <p>{{ hotelDescription }}</p>
-For now, we only have <span [innerText]="numberOfRooms"></span> Rooms but don't worry we will be expanding 30% of our current infrastructure in the upcoming year.
+<div [hidden]="hideRooms">For now, we only have <span [innerText]="numberOfRooms"></span> Rooms but don't worry we will be expanding 30% of our current infrastructure in the upcoming year.</div>
+<button (click)="ToggleRoomsInfo()"> Toggle Rooms Information</button>

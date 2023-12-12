@@ -13,8 +13,13 @@ export class RoomsComponent implements OnInit {
 
   numberOfRooms = 10;
 
+  hideRooms = false;
+
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
 
+  ToggleRoomsInfo(){
+   this.hideRooms = !this.hideRooms; 
+  }
 }
