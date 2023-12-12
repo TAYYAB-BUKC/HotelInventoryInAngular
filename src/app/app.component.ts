@@ -11,5 +11,5 @@ import { RoomsComponent } from './rooms/rooms.component';
     imports: [CommonModule, RouterOutlet, RoomsComponent]
 })
 export class AppComponent {
-  title = 'HotelInventory';
+  hotelName = 'Urban Oasis';
 }
