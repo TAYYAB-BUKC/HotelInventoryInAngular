@@ -1,3 +1,7 @@
 <p>{{ hotelDescription }}</p>
 <div [hidden]="hideRooms">For now, we only have <span [innerText]="numberOfRooms"></span> Rooms but don't worry we will be expanding 30% of our current infrastructure in the upcoming year.</div>
 <button (click)="ToggleRoomsInfo()"> Toggle Rooms Information</button>
+
+<div class="c_red" *ngIf="roomsInformation.totalRooms == roomsInformation.bookedRooms">
+    We're currently basking in the joy of a fully booked hotel! Thank you for choosing us and making our rooms your preferred choice. If you weren't able to secure a reservation this time, don't worry – there's always a next time! We understand that plans can change, and we'll be eagerly awaiting the opportunity to host you in the future. Our team is here to assist you in planning your next memorable stay with us. Keep an eye out for our special offers and promotions, as we'd love to make your next visit even more delightful. Until then, safe travels and we look forward to welcoming you when the time is right!
+</div>
