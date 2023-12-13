@@ -1,3 +1,11 @@
+
+
+<div [ngStyle]="{'color': role == 'SuperAdmin' ? 'green': 'red'}">
+    Hello Super Admin!
+</div>
+<div [ngStyle]="{'color': role != 'SuperAdmim' ? 'red' : 'green'}">
+    Hello User!
+</div>
 <p>{{ hotelDescription }}</p>
 <div [hidden]="hideRooms">For now, we only have <span [innerText]="numberOfRooms"></span> Rooms but don't worry we will
     be expanding 30% of our current infrastructure in the upcoming year.</div>
@@ -11,8 +19,6 @@
     promotions, as we'd love to make your next visit even more delightful. Until then, safe travels and we look forward
     to welcoming you when the time is right!
 </div>
-
-<div>{{ roomsList }}</div>
 
 <div>Below is the room information</div>
 
@@ -44,5 +50,7 @@
     <div *ngSwitchDefault>
         <p>You are not authorized to view the rooms information</p>
     </div>
+
+
 </div>
 
