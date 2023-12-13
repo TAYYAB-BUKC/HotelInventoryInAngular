@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { IRoom } from './rooms';
+import { IRoom, IRoomList } from './rooms';
 import { NgIf } from '@angular/common';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'hinv-rooms',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, NgFor],
   templateUrl: './rooms.component.html',
   styleUrl: './rooms.component.scss'
 })
@@ -22,6 +23,60 @@ export class RoomsComponent implements OnInit {
     bookedRooms: 9,
     availableRooms: 1
   }
+
+  room1: IRoomList = {
+    number: 1,
+    type: "Standard",
+    price: 100,
+    amenities: "Wi-Fi, TV",
+    photos: "room1.jpg",
+    checkinTime: new Date("2023-12-13T12:00:00"),
+    checkoutTime: new Date("2023-12-14T10:00:00"),
+  };
+
+  room2: IRoomList = {
+    number: 2,
+    type: "Deluxe",
+    price: 150,
+    amenities: "Wi-Fi, TV, Mini Bar",
+    photos: "room2.jpg",
+    checkinTime: new Date("2023-12-13T14:00:00"),
+    checkoutTime: new Date("2023-12-14T12:00:00"),
+  }
+
+  room3: IRoomList = {
+    number: 3,
+    type: "Suite",
+    price: 200,
+    amenities: "Wi-Fi, TV, Mini Bar, Jacuzzi",
+    photos: "room3.jpg",
+    checkinTime: new Date("2023-12-13T16:00:00"),
+    checkoutTime: new Date("2023-12-14T14:00:00"),
+  }
+
+  room4: IRoomList = {
+    number: 4,
+    type: "Standard",
+    price: 120,
+    amenities: "Wi-Fi, TV, Balcony",
+    photos: "room4.jpg",
+    checkinTime: new Date("2023-12-13T18:00:00"),
+    checkoutTime: new Date("2023-12-14T16:00:00"),
+  }
+
+  room5: IRoomList = {
+    number: 5,
+    type: "Deluxe",
+    price: 180,
+    amenities: "Wi-Fi, TV, Mini Bar, Sea View",
+    photos: "room5.jpg",
+    checkinTime: new Date("2023-12-13T20:00:00"),
+    checkoutTime: new Date("2023-12-14T18:00:00"),
+  }
+
+  roomsList: IRoomList[] = [
+    this.room1, this.room2, this.room3, this.room4, this.room5
+  ]
 
   ngOnInit(): void {
     throw new Error('Method not implemented.');
