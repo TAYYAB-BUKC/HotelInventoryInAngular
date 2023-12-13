@@ -30,6 +30,7 @@ export class RoomsComponent implements OnInit {
     photos: "room1.jpg",
     checkinTime: new Date("2023-12-13T12:00:00"),
     checkoutTime: new Date("2023-12-14T10:00:00"),
+    rating: 2
   };
 
   room2: IRoomList = {
@@ -40,6 +41,7 @@ export class RoomsComponent implements OnInit {
     photos: "room2.jpg",
     checkinTime: new Date("2023-12-13T14:00:00"),
     checkoutTime: new Date("2023-12-14T12:00:00"),
+    rating: 2.5
   }
 
   room3: IRoomList = {
@@ -50,6 +52,7 @@ export class RoomsComponent implements OnInit {
     photos: "room3.jpg",
     checkinTime: new Date("2023-12-13T16:00:00"),
     checkoutTime: new Date("2023-12-14T14:00:00"),
+    rating: 3
   }
 
   room4: IRoomList = {
@@ -60,6 +63,7 @@ export class RoomsComponent implements OnInit {
     photos: "room4.jpg",
     checkinTime: new Date("2023-12-13T18:00:00"),
     checkoutTime: new Date("2023-12-14T16:00:00"),
+    rating: 4
   }
 
   room5: IRoomList = {
@@ -70,6 +74,7 @@ export class RoomsComponent implements OnInit {
     photos: "room5.jpg",
     checkinTime: new Date("2023-12-13T20:00:00"),
     checkoutTime: new Date("2023-12-14T18:00:00"),
+    rating: 4.5546
   }
 
   roomsList: IRoomList[] = [
