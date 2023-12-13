@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { IRoom, IRoomList } from './rooms';
-import { NgIf } from '@angular/common';
-import { NgFor } from '@angular/common';
-
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'hinv-rooms',
   standalone: true,
-  imports: [NgIf, NgFor],
+  imports: [CommonModule],
   templateUrl: './rooms.component.html',
   styleUrl: './rooms.component.scss'
 })
@@ -78,6 +76,7 @@ export class RoomsComponent implements OnInit {
     this.room1, this.room2, this.room3, this.room4, this.room5
   ]
 
+  role: string = "SuperAdmin";
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }

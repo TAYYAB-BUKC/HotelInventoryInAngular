@@ -14,25 +14,35 @@
 
 <div>{{ roomsList }}</div>
 
-<table>
-    <tr>
-        <th>Index</th>
-        <th>Even/Odd</th>
-        <th>Room Number</th>
-        <th>Room Type</th>
-        <th>Room Price</th>
-        <th>Room Amenities</th>
-        <th>Room CheckInTime</th>
-        <th>Room CheckOutTime</th>
-    </tr>
-    <tr *ngFor="let room of roomsList; let e = even; let o = odd; let i = index">
-        <td>{{ i + 1 }}</td> 
-        <td>{{ e ? "Even" : "Odd" }}</td>
-        <td>{{ room.number }}</td>
-        <td>{{ room.type }}</td>
-        <td>{{ room.price }}</td>
-        <td>{{ room.amenities }}</td>
-        <td>{{ room.checkinTime }}</td>
-        <td>{{ room.checkoutTime }}</td>
-    </tr>
-</table>
+<div>Below is the room information</div>
+
+<div [ngSwitch]="role">
+    <div *ngSwitchCase="'SuperAdmin'">
+        <table>
+            <tr>
+                <th>Index</th>
+                <th>Even/Odd</th>
+                <th>Room Number</th>
+                <th>Room Type</th>
+                <th>Room Price</th>
+                <th>Room Amenities</th>
+                <th>Room CheckInTime</th>
+                <th>Room CheckOutTime</th>
+            </tr>
+            <tr *ngFor="let room of roomsList; let e = even; let o = odd; let i = index">
+                <td>{{ i + 1 }}</td> 
+                <td>{{ e ? "Even" : "Odd" }}</td>
+                <td>{{ room.number }}</td>
+                <td>{{ room.type }}</td>
+                <td>{{ room.price }}</td>
+                <td>{{ room.amenities }}</td>
+                <td>{{ room.checkinTime }}</td>
+                <td>{{ room.checkoutTime }}</td>
+            </tr>
+        </table>
+    </div>
+    <div *ngSwitchDefault>
+        <p>You are not authorized to view the rooms information</p>
+    </div>
+</div>
+
