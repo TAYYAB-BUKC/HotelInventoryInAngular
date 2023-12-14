@@ -24,7 +24,7 @@
 <p>{{ roomsList | json }}</p>
 <div [ngSwitch]="role">
     <div *ngSwitchCase="'SuperAdmin'">
-        <table>
+        <table class="table table-responsive">
             <tr>
                 <th>Index</th>
                 <th>Even/Odd</th>
