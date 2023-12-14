@@ -77,13 +77,13 @@ export class RoomsComponent implements OnInit {
     rating: 4.5546
   }
 
-  roomsList: IRoomList[] = [
-    this.room1, this.room2, this.room3, this.room4, this.room5
-  ]
+  roomsList: IRoomList[] = [];
 
   role: string = "SuperAdmin";
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.roomsList = [
+      this.room1, this.room2, this.room3, this.room4, this.room5
+    ]
   }
 
   ToggleRoomsInfo() {
