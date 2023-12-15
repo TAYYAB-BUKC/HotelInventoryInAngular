@@ -25,11 +25,11 @@
 <div *ngIf="selectedRoom">Below is the selected room information
     <p>{{ selectedRoom | json }}</p>
 </div>
-<div>Below is the room information</div>
+<br /> <br />
 <button class="btn btn-primary" (click)="AddNewRoom()">Add New Room</button>
 <div [ngSwitch]="role">
     <div *ngSwitchCase="'SuperAdmin'">
-        <hinv-room-list [rooms]="roomsList" (selectedRoom)="RoomSelection($event)"></hinv-room-list>
+        <hinv-room-list [rooms]="roomsList" (selectedRoom)="RoomSelection($event)" [title]="title"></hinv-room-list>
     </div>
     <div *ngSwitchDefault>
         <p>You are not authorized to view the rooms information</p>

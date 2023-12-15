@@ -94,6 +94,9 @@ export class RoomsComponent implements OnInit {
   roomsList: IRoomList[] = [];
 
   role: string = "SuperAdmin";
+
+  title: string = "Room List";
+
   ngOnInit(): void {
     this.roomsList = [
       this.room1, this.room2, this.room3, this.room4, this.room5
@@ -102,6 +105,7 @@ export class RoomsComponent implements OnInit {
 
   ToggleRoomsInfo() {
     this.hideRooms = !this.hideRooms;
+    this.title = 'Rooms List';
   }
 
   RoomSelection(room: IRoomList){
