@@ -24,30 +24,7 @@
 <p>{{ roomsList | json }}</p>
 <div [ngSwitch]="role">
     <div *ngSwitchCase="'SuperAdmin'">
-        <table class="table table-responsive">
-            <tr>
-                <th>Index</th>
-                <th>Even/Odd</th>
-                <th>Room Number</th>
-                <th>Room Type</th>
-                <th>Room Price</th>
-                <th>Room Amenities</th>
-                <th>Room CheckInTime</th>
-                <th>Room CheckOutTime</th>
-                <th>Room Rating</th>
-            </tr>
-            <tr [ngClass]="e ? 'even' : 'odd'" *ngFor="let room of roomsList | slice: 0:10; let e = even; let o = odd; let i = index">
-                <td>{{ i + 1 }}</td> 
-                <td>{{ e ? "Even" : "Odd" | lowercase }} </td>
-                <td>{{ room.number | percent }}</td>
-                <td>{{ room.type | uppercase }}</td>
-                <td>{{ room.price | currency: 'USD' }}</td>
-                <td>{{ room.amenities | titlecase }}</td>
-                <td>{{ room.checkinTime | date : 'MM/dd/yyyy'}}</td>
-                <td>{{ room.checkoutTime | date }}</td>
-                <td>{{ room.rating | number : '1.0-2'}}</td>   
-            </tr>
-        </table>
+        <hinv-room-list [rooms]="roomsList"></hinv-room-list>
     </div>
     <div *ngSwitchDefault>
         <p>You are not authorized to view the rooms information</p>

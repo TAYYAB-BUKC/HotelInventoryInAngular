@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { IRoom, IRoomList } from './rooms';
 import { CommonModule } from '@angular/common';
+import { RoomListComponent } from './room-list/room-list.component';
+
 @Component({
   selector: 'hinv-rooms',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RoomListComponent],
   templateUrl: './rooms.component.html',
   styleUrl: './rooms.component.scss'
 })
