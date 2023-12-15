@@ -79,6 +79,18 @@ export class RoomsComponent implements OnInit {
     rating: 4.5546
   }
 
+  room6: IRoomList = {
+    number: 6,
+    type: "Super Deluxe",
+    price: 250,
+    amenities: "Wi-Fi, TV, Mini Bar, Sea View",
+    photos: "room6.jpg",
+    checkinTime: new Date("2023-12-13T20:00:00"),
+    checkoutTime: new Date("2023-12-14T18:00:00"),
+    rating: 5
+  }
+
+
   roomsList: IRoomList[] = [];
 
   role: string = "SuperAdmin";
@@ -98,4 +110,9 @@ export class RoomsComponent implements OnInit {
   }
 
   selectedRoom!: IRoomList;
+
+  AddNewRoom() {
+    //this.roomsList.push(this.room6);
+    this.roomsList = [...this.roomsList, this.room6];
+  }
 }

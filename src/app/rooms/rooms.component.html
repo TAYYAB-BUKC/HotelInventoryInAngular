@@ -9,7 +9,7 @@
 <p>{{ hotelDescription }}</p>
 <div [hidden]="hideRooms">For now, we only have <span [innerText]="numberOfRooms"></span> Rooms but don't worry we will
     be expanding 30% of our current infrastructure in the upcoming year.</div>
-<button (click)="ToggleRoomsInfo()"> Toggle Rooms Information</button>
+<button class="btn btn-primary" (click)="ToggleRoomsInfo()"> Toggle Rooms Information</button>
 
 <div class="c_red" *ngIf="roomsInformation.totalRooms == roomsInformation.bookedRooms">
     We're currently basking in the joy of a fully booked hotel! Thank you for choosing us and making our rooms your
@@ -26,6 +26,7 @@
     <p>{{ selectedRoom | json }}</p>
 </div>
 <div>Below is the room information</div>
+<button class="btn btn-primary" (click)="AddNewRoom()">Add New Room</button>
 <div [ngSwitch]="role">
     <div *ngSwitchCase="'SuperAdmin'">
         <hinv-room-list [rooms]="roomsList" (selectedRoom)="RoomSelection($event)"></hinv-room-list>

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { IRoomList } from '../rooms';
 import { CommonModule } from '@angular/common';
 
@@ -7,7 +7,8 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './room-list.component.html',
-  styleUrl: './room-list.component.scss'
+  styleUrl: './room-list.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RoomListComponent {
 
