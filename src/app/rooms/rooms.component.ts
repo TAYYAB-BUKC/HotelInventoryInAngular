@@ -1,4 +1,4 @@
-import { AfterContentChecked, AfterViewInit, Component, DoCheck, OnInit, ViewChild } from '@angular/core';
+import { AfterContentChecked, AfterViewInit, Component, DoCheck, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { IRoom, IRoomList } from './rooms';
 import { CommonModule } from '@angular/common';
 import { RoomListComponent } from './room-list/room-list.component';
@@ -99,6 +99,8 @@ export class RoomsComponent implements OnInit, DoCheck, AfterViewInit, AfterCont
 
   @ViewChild(HeaderComponent) headerComponent!: HeaderComponent;
 
+  @ViewChildren(HeaderComponent) headerComponentChilds!: QueryList<HeaderComponent>;
+
   ngOnInit(): void {
     this.roomsList = [
       this.room1, this.room2, this.room3, this.room4, this.room5
@@ -127,10 +129,18 @@ export class RoomsComponent implements OnInit, DoCheck, AfterViewInit, AfterCont
   }
 
   ngAfterViewInit(): void {
-    this.headerComponent.title = 'Rooms Header';
+    //this.headerComponent.title = 'Rooms Header';
+    console.log(this.headerComponentChilds);
+    let count= 1;
+    this.headerComponentChilds.forEach(v => {
+        v.title = 'Rooms Header ' + count;
+        count++;
+    });
   }
 
   ngAfterContentChecked(): void {
-    
+    // this.headerComponentChilds!.get(0).title = 'First Rooms Header';
+    // this.headerComponentChilds!.get(1).title = 'Second Rooms Header';
+    // this.headerComponentChilds!.get(2).title = 'Third Rooms Header';
   }
 }
