@@ -2,13 +2,15 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild, ViewContainerR
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { RoomsComponent } from './rooms/rooms.component';
+import { ContainerComponent } from './container/container.component';
+import { EmployeeComponent } from './employee/employee.component';
 
 @Component({
     selector: 'hinv-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [CommonModule, RouterOutlet, RoomsComponent]
+    imports: [CommonModule, RouterOutlet, RoomsComponent, ContainerComponent, EmployeeComponent]
 })
 export class AppComponent implements AfterViewInit, OnInit {
   
