@@ -100,6 +100,8 @@ export class RoomsComponent implements OnInit, DoCheck, AfterViewInit, AfterCont
   @ViewChild(HeaderComponent) headerComponent!: HeaderComponent;
 
   @ViewChildren(HeaderComponent) headerComponentChilds!: QueryList<HeaderComponent>;
+  
+  hideHeader = false;
 
   ngOnInit(): void {
     this.roomsList = [
@@ -142,5 +144,9 @@ export class RoomsComponent implements OnInit, DoCheck, AfterViewInit, AfterCont
     // this.headerComponentChilds!.get(0).title = 'First Rooms Header';
     // this.headerComponentChilds!.get(1).title = 'Second Rooms Header';
     // this.headerComponentChilds!.get(2).title = 'Third Rooms Header';
+  }
+
+  ToggleHeader() {
+    this.hideHeader = !this.hideHeader;
   }
 }

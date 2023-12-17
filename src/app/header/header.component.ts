@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'hinv-header',
@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnDestroy {
   title: string = 'Header Title'
+
+  ngOnDestroy(): void {
+    console.log('This Life cyle called when this component element gets removed from the DOM. To illustrate this, I removed this component element from the DOM');
+  }
 }

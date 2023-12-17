@@ -38,7 +38,9 @@
     <div *ngSwitchDefault>
         <p>You are not authorized to view the rooms information</p>
     </div>
-
-
 </div>
 
+<button class="btn btn-danger" (click)="ToggleHeader()"> Toggle Header</button>
+<div *ngIf="hideHeader">
+    <hinv-header></hinv-header>
+</div>
