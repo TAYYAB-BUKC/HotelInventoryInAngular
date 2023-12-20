@@ -5,8 +5,10 @@ import { IRoomList } from '../rooms/rooms';
   providedIn: 'root'
 })
 export class RoomService {
-
-  constructor() { }
+  
+  constructor() {
+    console.log('Room Service Initialized Line 1.....');
+  }
 
   room1: IRoomList = {
     number: 1,

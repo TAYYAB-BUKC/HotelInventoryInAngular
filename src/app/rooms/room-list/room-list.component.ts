@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { IRoomList } from '../rooms';
 import { CommonModule } from '@angular/common';
+import { RoomService } from '../../services/room.service';
 
 @Component({
   selector: 'hinv-room-list',
@@ -8,7 +9,8 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   templateUrl: './room-list.component.html',
   styleUrl: './room-list.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [RoomService]
 })
 export class RoomListComponent implements OnChanges {
   
@@ -17,6 +19,10 @@ export class RoomListComponent implements OnChanges {
   @Input() title: string = '';
 
   @Output() selectedRoom = new EventEmitter<IRoomList>();
+
+  constructor(private roomService: RoomService){
+    
+  } 
 
   SelectRoom(room: IRoomList){
     this.selectedRoom.emit(room);
