@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, Self, SimpleChanges } from '@angular/core';
 import { IRoomList } from '../rooms';
 import { CommonModule } from '@angular/common';
 import { RoomService } from '../../services/room.service';
@@ -9,10 +9,10 @@ import { RoomService } from '../../services/room.service';
   imports: [CommonModule],
   templateUrl: './room-list.component.html',
   styleUrl: './room-list.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [RoomService]
+  changeDetection: ChangeDetectionStrategy.OnPush//,
+  //providers: [RoomService]
 })
-export class RoomListComponent implements OnChanges {
+export class RoomListComponent implements OnChanges, OnInit {
   
   @Input() rooms: IRoomList[] = [];
 
@@ -20,10 +20,15 @@ export class RoomListComponent implements OnChanges {
 
   @Output() selectedRoom = new EventEmitter<IRoomList>();
 
-  constructor(private roomService: RoomService){
+  constructor(@Self() private roomService: RoomService){
     
   } 
+  ngOnInit(): void {
+    window.alert('You will see error message on console window stated that no provider found for RoomService because I have added @Self() resolution modifier and removed the providers list from component decorator.');
+    console.log('You will see error message on console window stated that no provider found for RoomService because I have added @Self() resolution modifier and removed the providers list from component decorator.');
+  }
 
+  
   SelectRoom(room: IRoomList){
     this.selectedRoom.emit(room);
   }
