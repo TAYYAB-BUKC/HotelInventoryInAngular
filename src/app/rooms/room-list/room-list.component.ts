@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, Self, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, Self, SkipSelf, SimpleChanges } from '@angular/core';
 import { IRoomList } from '../rooms';
 import { CommonModule } from '@angular/common';
 import { RoomService } from '../../services/room.service';
@@ -20,14 +20,15 @@ export class RoomListComponent implements OnChanges, OnInit {
 
   @Output() selectedRoom = new EventEmitter<IRoomList>();
 
-  constructor(@Self() private roomService: RoomService){
+  constructor(@SkipSelf() private roomService: RoomService){
     
-  } 
-  ngOnInit(): void {
-    window.alert('You will see error message on console window stated that no provider found for RoomService because I have added @Self() resolution modifier and removed the providers list from component decorator.');
-    console.log('You will see error message on console window stated that no provider found for RoomService because I have added @Self() resolution modifier and removed the providers list from component decorator.');
   }
-
+   
+  ngOnInit(): void {
+    alert('Now all functionalities of this component is available because I added @SkipSelf() resolution modifier that will not check the providers array and executes all code on this component.');
+    //window.alert('You will see error message on console window stated that no provider found for RoomService because I have added @Self() resolution modifier and removed the providers list from component decorator.');
+    //console.log('You will see error message on console window stated that no provider found for RoomService because I have added @Self() resolution modifier and removed the providers list from component decorator.');
+  }
   
   SelectRoom(room: IRoomList){
     this.selectedRoom.emit(room);
