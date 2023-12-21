@@ -50,7 +50,7 @@ export class RoomsComponent implements OnInit, DoCheck, AfterViewInit, AfterCont
   hideHeader = false;
 
   constructor(private roomService: RoomService){
-
+    this.roomService.SetOwnerName('Room Component');
   }
   ngOnInit(): void {
     this.roomsList = this.roomService.GetRooms();
@@ -95,5 +95,9 @@ export class RoomsComponent implements OnInit, DoCheck, AfterViewInit, AfterCont
 
   ToggleHeader() {
     this.hideHeader = !this.hideHeader;
+  }
+
+  AlertRoomServiceOwnerName(){
+    alert(this.roomService.GetOwnerName());
   }
 }

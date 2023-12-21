@@ -5,13 +5,14 @@ import { RoomsComponent } from './rooms/rooms.component';
 import { ContainerComponent } from './container/container.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { LoggerService } from './services/logger.service';
+import { HeaderComponent } from './header/header.component';
 
 @Component({
     selector: 'hinv-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [CommonModule, RouterOutlet, RoomsComponent, ContainerComponent, EmployeeComponent]
+    imports: [CommonModule, RouterOutlet, RoomsComponent, ContainerComponent, EmployeeComponent, HeaderComponent]
 })
 export class AppComponent implements AfterViewInit, OnInit {
   

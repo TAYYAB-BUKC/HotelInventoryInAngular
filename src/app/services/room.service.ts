@@ -6,10 +6,12 @@ import { IRoomList } from '../rooms/rooms';
 })
 export class RoomService {
   
-  constructor() {
-    console.log('Room Service Initialized Line 1.....');
-  }
+  ownerName: string = 'Self';
 
+  constructor() {
+    
+  }
+  
   room1: IRoomList = {
     number: 1,
     type: "Standard",
@@ -71,5 +73,13 @@ export class RoomService {
 
   GetRooms() {
     return this.roomsList;
+  }
+
+  GetOwnerName(){
+    return this.ownerName;
+  }
+
+  SetOwnerName(name:string){
+    return this.ownerName = name;
   }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RoomService } from '../services/room.service';
 
 @Component({
   selector: 'hinv-employee',
@@ -9,4 +10,12 @@ import { Component } from '@angular/core';
 })
 export class EmployeeComponent {
   employeeName = 'Usama Rais';
+
+  constructor(private roomService: RoomService){
+    this.roomService.SetOwnerName('Employee Component');
+  }
+
+  AlertName(){
+    alert(this.roomService.GetOwnerName());
+  }
 }
