@@ -1,5 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { IRoomList } from '../rooms/rooms';
+import { APP_CONFIGURATION_SERVICE } from '../AppConfiguration/appconfiguration.service';
+import { IAppConfiguration } from '../AppConfiguration/appconfiguration.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +10,8 @@ export class RoomService {
   
   ownerName: string = 'Self';
 
-  constructor() {
-    
+  constructor(@Inject(APP_CONFIGURATION_SERVICE) private configuration: IAppConfiguration) {
+    console.log('API Endpoint: '+ this.configuration.ApiEndPoint);
   }
   
   room1: IRoomList = {
