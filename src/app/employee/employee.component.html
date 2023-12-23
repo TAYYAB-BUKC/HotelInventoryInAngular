@@ -1,2 +1,29 @@
 <h1>My valueable employee name is {{ employeeName }}</h1>
 <button class="btn btn-primary" (click)="AlertName()">Alert Room Service Owner Name from Employee Component</button>
+
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Country</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Company</th>
+        </tr>    
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of empList;">
+            <td>{{ employee.id }}</td>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.email }}</td>
+            <td>{{ employee.address }}</td>
+            <td>{{ employee.country }}</td>
+            <td>{{ employee.state }}</td>
+            <td>{{ employee.zip }}</td>
+            <td>{{ employee.company }}</td>
+        </tr>
+    </tbody>
+</table>

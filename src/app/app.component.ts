@@ -8,13 +8,14 @@ import { LoggerService } from './services/logger.service';
 import { HeaderComponent } from './header/header.component';
 import { APP_CONFIGURATION, APP_CONFIGURATION_SERVICE } from './AppConfiguration/appconfiguration.service';
 import { LocalStorageToken } from './localstorage.token';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
     selector: 'hinv-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [CommonModule, RouterOutlet, RoomsComponent, ContainerComponent, EmployeeComponent, HeaderComponent],
+    imports: [CommonModule, RouterOutlet, RoomsComponent, ContainerComponent, EmployeeComponent, HeaderComponent, HttpClientModule],
     providers: [{ provide: APP_CONFIGURATION_SERVICE, useValue: APP_CONFIGURATION}]
 
 })
